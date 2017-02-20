@@ -1,0 +1,6 @@
+{% extends 'blog/base.html' %} {% block content %}
+<div class="post">
+    <h1>Post not found :(</h1>
+    <p>You can <a href="{% url 'post_new' %}">create new post</a> or <a href="{% url 'feed' %}">go back to the feed</a></p>
+</div>
+{% endblock %}

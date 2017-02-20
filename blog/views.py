@@ -10,8 +10,12 @@ def feed(request):
 
 
 def post(request, pk):
-    post = get_object_or_404(Post, pk=pk)
-    return render(request, 'blog/post.html', {'post': post})
+    # post = get_object_or_404(Post, pk=pk)
+    post = Post.objects.filter(pk=pk)
+    if post:
+        return render(request, 'blog/post.html', {'post': post})
+    else:
+        return render(request, 'blog/no_post.html', {})
 
 
 def post_new(request):
