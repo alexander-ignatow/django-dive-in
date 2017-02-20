@@ -2,18 +2,21 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
 from .models import Post
 from .forms import PostForm
+#import logging
 
+# Get an instance of a logger
+# logger = logging.getLogger(__name__)
 
 def feed(request):
     feed = Post.objects.order_by('-published_date')
     return render(request, 'blog/feed.html', {'feed': feed})
 
 
-def post(request, pk):
+def post(request, pkey):
     # post = get_object_or_404(Post, pk=pk)
-    post = Post.objects.filter(pk=pk)
-    if post:
-        return render(request, 'blog/post.html', {'post': post})
+    postToShow = Post.objects.filter(pk=pkey)
+    if postToShow:
+        return render(request, 'blog/post.html', {'post': postToShow[0]})
     else:
         return render(request, 'blog/no_post.html', {})
 
