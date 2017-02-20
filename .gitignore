@@ -3,3 +3,4 @@ __pycache__
 mysiteenv
 db.sqlite3
 .DS_Store
+*.log
