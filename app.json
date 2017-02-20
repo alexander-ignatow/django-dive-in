@@ -1,0 +1,8 @@
+{
+  "name": "Django dive in",
+  "description": "no desc",
+  "image": "heroku/python",
+  "repository": "https://github.com/alexander-ignatow/django-dive-in",
+  "keywords": ["python", "django" ],
+  "addons": [ "heroku-postgresql" ]
+}
