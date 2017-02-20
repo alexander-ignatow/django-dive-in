@@ -1,4 +1,4 @@
 from django.shortcuts import render
 
-def post_list(request):
+def feed(request):
     return render(request, 'blog/feed.html', {})
